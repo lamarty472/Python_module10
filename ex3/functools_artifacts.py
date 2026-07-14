@@ -1,6 +1,6 @@
 from typing import Callable
 import operator
-from functools import reduce
+from functools import reduce, partial
 
 
 def spell_reducer(spells: list[int], operation: str) -> int:
@@ -20,7 +20,7 @@ def spell_reducer(spells: list[int], operation: str) -> int:
 
 
 def partial_enchanter(base_enchantment: Callable) -> dict[str, Callable]:
-    
+
 
 
 def main():
