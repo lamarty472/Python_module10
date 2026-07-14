@@ -35,7 +35,7 @@ def main() -> None:
         )
 
     print("\nTesting spell transformer...")
-    test_spells = ("Fireball", "heal", "shield")
+    test_spells = ["Fireball", "heal", "shield"]
     test_spells = spell_transformer(test_spells)
     print(*test_spells)
 

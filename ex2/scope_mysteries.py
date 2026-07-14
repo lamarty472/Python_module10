@@ -63,21 +63,22 @@ def main() -> None:
     print("\nTesting enchantment factory...")
     enchantment = enchantment_factory("Firing")
     enchantment2 = enchantment_factory("Freeze")
-    print(f"{enchantment("Sword")}")
-    print(f"{enchantment("Stick")}")
-    print(f"{enchantment2("Arrow")}")
+    print(f"{enchantment('Sword')}")
+    print(f"{enchantment('Stick')}")
+    print(f"{enchantment2('Arrow')}")
 
     print("\nTesting memory vault...")
     ssd1 = memory_vault()
     print("store: Coucou in ssd1 with the key: text")
     ssd1["store"]("text", "Coucou")
-    print(f"ssd1 = {ssd1["recall"]("text")}")
+    print(f"ssd1 = {ssd1['recall']('text')}")
     print("store: 7 in ssd1 with the key: integer")
     ssd1["store"]("integer", "7")
-    print(f"ssd1 = {ssd1["recall"]("integer")}")
+    print(f"ssd1 = {ssd1['recall']('integer')}")
     print("Sherch Happyness case in ssd1")
-    print(f"ssd1 = {ssd1["recall"]("Happyness")}")
+    print(f"ssd1 = {ssd1['recall']('Happyness')}")
 
 
 if __name__ == "__main__":
     main()
+
