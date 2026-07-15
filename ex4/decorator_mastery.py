@@ -75,6 +75,21 @@ def doomed_spell() -> str:
     raise ValueError("Spell fizzled")
 
 
+class MageGuild:
+    @staticmethod
+    def validate_mage_name(name: str) -> bool:
+        if len(name) < 3:
+            return False
+        for char in name:
+            if not (char.isalpha() or char == " "):
+                return False
+        return True
+
+    @power_validator(min_power=10)
+    def cast_spell(self, spell_name: str, power: int) -> str:
+        return f"Successfully cast {spell_name} with {power} power"
+
+
 def main():
     print("Testing spell timer...")
     print("Result:", fireball())
@@ -86,6 +101,14 @@ def main():
     print("\nTesting retrying spell...")
     print(unstable_spell())
     print(doomed_spell())
+
+    print("\nTesting MageGuild...")
+    print(MageGuild.validate_mage_name("Merlin"))
+    print(MageGuild.validate_mage_name("Al"))
+
+    guild = MageGuild()
+    print(guild.cast_spell("Lightning", power=15))
+    print(guild.cast_spell("Weak", power=5))
 
 
 if __name__ == "__main__":
